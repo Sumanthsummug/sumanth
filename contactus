@@ -1,0 +1,367 @@
+<div class="scroll-container">
+<div class="breadcrumb-area contact-breadcrumb bg-img bg-overlay jarallax" style="background-image: none;" data-jarallax-original-styles="background-image: url(https://burst.shopifycdn.com/photos/contact-us-image.jpg?width=1200&format=pjpg&exif=1&iptc=1);">
+    <div class="container">
+      <div class="row">
+    <div class="col-12">
+    <div class="breadcrumb-content text-center mt-100">
+    <h2 class="page-title">Contact Us</h2>
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb justify-content-center">
+    <li class="breadcrumb-item"><a href="home.component.html">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+    </ol>
+    </nav>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -100;">
+    <div style="background-position: 50% 50%; 
+    background-size:cover; 
+    background-repeat: no-repeat; 
+    
+     position: fixed; 
+     top: 0px; 
+     left: 0px; 
+     width: 964.8px; 
+     height: 569.5px;
+      overflow: hidden; 
+      pointer-events: none;
+       margin-top: 84.75px; 
+       transform: translate3d(0px, -24.75px, 0px);">
+    </div>
+</div>
+<!-- Contact Us Page -->
+<section class="google-maps-contact-info">
+    <div class="container-fluid">
+    <div class="google-maps-contact-content">
+    <div class="row">
+    
+    <div class="col-6 col-lg-3">
+    <div class="single-contact-info">
+    <i class="fa fa-phone" aria-hidden="true"></i>
+    <h4>Phone</h4>
+    <p>+1234567890</p>
+    </div>
+    </div>
+    
+    <div class="col-6 col-lg-3">
+    <div class="single-contact-info">
+    <i class="fa fa-map-marker" aria-hidden="true"></i>
+    <h4>Address</h4>
+    <p>plan A trip,Kacheguda,Hyderabad</p>
+    </div>
+    </div>
+    
+    <div class="col-6 col-lg-3">
+    <div class="single-contact-info">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    <h4>Open time</h4>
+    <p>10:00 am to 11:00 pm</p>
+    </div>
+    </div>
+    
+    <div class="col-6 col-lg-3">
+    <div class="single-contact-info">
+    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+    <h4>Email</h4>
+    <p>Info.plan4holiday@gmail.com</p>
+    </div>
+    </div>
+    </div>
+    
+    <div class="google-maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60879.50071401566!2d78.34744825609653!3d17.509003000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb916e49e41717%3A0xb43fbc47485a4d12!2sPlan%20A%20Trip%20India!5e0!3m2!1sen!2sin!4v1690202166185!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  </div>
+    </div>
+    </div>
+    </section>
+  
+<!-- Contact Us Page -->
+<div class="contact-page-container">
+<section class="contact-us-page">
+    
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Contact Us</h2>
+          <p>If you have any questions, inquiries, or feedback, feel free to get in touch with us. We would love to hear from you!</p>
+          <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
+            <div class="form-group">
+              <label for="Email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                name="Email"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+                formControlName="Email"
+              />
+              <small id="emailHelp" class="form-text text-muted"
+                >We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="fullname">Full Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Fullname"
+                placeholder="Full Name"
+                formControlName="Fullname"
+              />
+            </div>
+  
+            <div class="form-group">
+              <label for="comment">Comment</label>
+              <textarea
+                class="form-control"
+                formControlName="Comment"
+                name="Comment"
+              >
+              </textarea>
+            </div>
+            <div class="form-check mb-4">
+              <input type="checkbox" class="form-check-input" name="updates" id="updates" value="1">
+              <label for="updates" class="form-check-label">Send me copy</label>
+            </div>
+            <button type="submit" class="btn btn-primary"[disabled]="!FormData.valid">Submit</button>
+          </form>
+          <div *ngIf="submitted" class="alert alert-success mt-3">
+            Form submitted successfully!
+          </div>
+        </div>
+        
+       <div class="summu">
+        <div class="col-md-6">
+          <!-- Add contact information here -->
+          <h2  class="text-right">Contact Information</h2>
+          <ul class="contact-info text-left">
+            <li>
+              <i class="fa fa-map-marker"></i>
+              Address: plan A trip,Kacheguda,Hyderabad
+            </li>
+            <li>
+              <i class="fa fa-phone"></i>
+              Phone: +1234567890
+            </li>
+            <li>
+              <i class="fa fa-envelope"></i>
+              Email: info@plan4holiday.com
+            </li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    
+
+
+
+ </section>
+</div>
+    </div>
+    
+</div>
+  
+---------------------------------------------------------------
+
+.scroll-container {
+  width: 1600px;
+  height: 710px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+  .scroll-content {
+    animation: scrollDown 20s linear infinite; 
+    position: absolute; 
+    width: 100%;
+    height: auto;
+  }
+.breadcrumb-area {
+    padding: 100px 0;
+    position: relative;
+  }
+  
+  .breadcrumb-content {
+    color: #fff;
+  }
+  
+  .breadcrumb-content h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .breadcrumb-content nav ol {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .breadcrumb-content nav ol li {
+    display: inline-block;
+    padding: 0;
+  }
+  
+  .breadcrumb-content nav ol li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+  
+  .breadcrumb-content nav ol li a:hover {
+    color:#ff3c78;
+  }
+  
+  /* Google Maps and Contact Info styles */
+  .google-maps-contact-info {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+  }
+  
+  .google-maps-contact-content {
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .single-contact-info {
+    text-align: center;
+    margin-bottom: 30px;
+    
+  }
+  
+  .single-contact-info i {
+    font-size: 36px;
+    color: #ff3c78;
+    margin-bottom: 10px;
+    
+  }
+  
+  .single-contact-info h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    
+  }
+  
+  .single-contact-info p {
+    margin: 0;
+    
+  }
+  
+  .google-maps {
+    margin-top: 30px;
+  }
+  
+  .google-maps iframe {
+    width: 100%;
+    height: 600px;
+    border: 0;
+   align-items: left ;
+  }
+  
+  /* Contact Form styles */
+  .contact-us-page form {
+    margin-top: 30px;
+  }
+  
+  .contact-us-page form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .contact-us-page form label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .contact-us-page form input[type="text"],
+  .contact-us-page form input[type="email"],
+  .contact-us-page form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .contact-us-page form textarea {
+    resize: vertical;
+  }
+  
+  .contact-us-page form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color:#ff3c78;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .contact-us-page form button:hover {
+    background-color: #ff3c78;
+  }
+  
+.summu {
+  display:flex;
+  justify-content:right;
+  align-items: right;
+  height: 100vh; 
+  padding:0px;
+  margin-right: 6;
+  left:20%;
+}
+  
+
+  
+  
+
+
+  
+  .contact-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust this if needed to control the vertical centering */
+  }
+  
+  ------------------------------------------------------------------------------------------------
+import { Component, OnInit  } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'
+
+@Component({
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.css']
+})
+export class ContactComponent implements OnInit {
+  FormData!: FormGroup;
+  submitted = false;
+
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    
+    this.FormData = this.formBuilder.group({
+      Email: ['', [Validators.required, Validators.email]],
+      Fullname: ['', Validators.required],
+      Comment: ['', Validators.required]
+    });
+  }
+
+  
+  onSubmit(formData: any) {
+    if (this.FormData.valid) {
+      
+      console.log('Form submitted:', formData);
+
+      this.submitted = true;
+      this.FormData.reset();
+    }
+  }
+
+
+}
+-----------------------------------------

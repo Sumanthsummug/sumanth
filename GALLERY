@@ -1,0 +1,470 @@
+Gallery HTML
+-----------------------------------------------------------------
+<div class="scroll-container">
+  <div class="image-container">
+    <div class="image-slide" *ngFor="let destination of holidayDestinations; let i = index" (click)="showCorrespondingImages(i)">
+      <img [src]="destination.imageUrl" alt="Holiday Destination" class="animated-image">
+      <div class="image-text">
+        <h2>{{ destination.name }}</h2>
+        <p>{{ destination.description }}</p>
+      </div>
+      <div class="corresponding-images" [ngClass]="{'show': selectedImageIndex === i}">
+        <img *ngFor="let image of destination.correspondingImages" [src]="image" alt="Corresponding Image">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="selected-image-container" *ngIf="selectedImageIndex !== -1">
+  <div class="selected-image-wrapper" (click)="hideCorrespondingImages()">
+    <i class="close-icon">&times;</i>
+    <img [src]="holidayDestinations[selectedImageIndex].imageUrl" alt="Selected Holiday Destination">
+    <div class="selected-image-text">
+      <h2>{{ holidayDestinations[selectedImageIndex].name }}</h2>
+      <p>{{ holidayDestinations[selectedImageIndex].description }}</p>
+    </div>
+  </div>
+  <div class="selected-corresponding-images">
+    <img *ngFor="let image of holidayDestinations[selectedImageIndex].correspondingImages" [src]="image" alt="Corresponding Image">
+  </div>
+</div>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Gallery TS Code
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-gallery',
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.css']
+})
+export class GalleryComponent {
+  holidayDestinations = [
+   
+   
+    {
+      name: 'Delhi Gate',
+      description: 'Delhi Gate is one of the biggest war memorials in the world. Being the National Monument of India, the India Gate is also one of the biggest war memorials in the world. The design of India Gate is similar to that of Arc De Triomphe in Paris.2',
+      imageUrl: 'https://media.gettyimages.com/id/522675372/photo/india-gate-a-national-monument-is-a-massive-red-sandstone-arch-and-the-indian-armys-tomb-of.jpg?s=612x612&w=0&k=20&c=YPBiK0nvpg0XvryE2PEfJp0gpLCXfPjoyQvRPgTQl8A=',
+      correspondingImages: []
+    },
+    {
+      name: 'TajMahal',
+      description: 'Taj Mahal means "Crown Palace" and is in fact the most well preserved and architecturally beautiful tomb in the world. The English poet, Sir Edwin Arnold has described The Taj as "Not a piece of architecture, as other buildings are, but the proud passions of an emperors love wrought in living stones."',
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Taj-Mahal.jpg/1024px-Taj-Mahal.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Kerala',
+      description: 'Look deep into nature, and then you will understand everything better',
+      imageUrl: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Munnar',
+      description: ' Kerala allure with her sun and sand, blue backwater inlets, splendid historical monuments, spice plantations, tea and coffee gardens, lush green forests and much more. Kerala Tourism It is a perfect gateway for nature lovers, adventure seekers, honeymooners, families and backpackers. Kerala allure with her sun and sand, blue backwater inlets, splendid historical monuments, spice plantations, tea and coffee gardens, lush green forests and much more.',
+      imageUrl: 'https://www.keralatourism.org/images/homecontentimage/honeymoon.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Gokarna',
+      description: 'It is now a favourite with most of the foreign tourists travelling to India for some Sun, sand and sea. We will see today how much warmth and fun we can get from this very holy, beautiful and exotic place. 1. The most beautiful beach in Gokarna is the Om beach, without a shadow of doubt.18-Sept-2019',
+      imageUrl: 'https://assets.architecturaldigest.in/photos/63a5f5a0cdb6a499ebcee9f8/16:9/w_1616,h_909,c_limit/Gokarna%20retreat%20featured%20image.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Beaches Of Gokarna',
+      description: 'Gokarna Main Beach is mainly used by Indian pilgrims. Main Beach is a long open beach, known for surfing. Kudle and Om are around 6 km from Gokarna town along a muddy hill; they are accessible by rickshaw or foot. Half moon and Paradise are beyond Om beach and are accessible only by trekking or boat.',
+      imageUrl: 'https://www.oyorooms.com/travel-guide/wp-content/uploads/2021/05/Gokarna-3-1-1280x720.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Goa',
+      description: 'Sun, sand and sea being the major attractions, Goa trip is a perfect heaven for the ones who need and want relaxation. Goa Beach Resorts always add to the fun. Christian Pilgrimage tours to Goa are extremely popular.',
+      imageUrl: 'https://ihplb.b-cdn.net/wp-content/uploads/2016/11/Goa.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Crescent Beaches Of Goa',
+      description: 'Crescent Beaches Shaped like the new moon, Goas beaches are known the world over. Fringed by swaying palm and coconut trees with cool and comfortable shacks offering a variety of refreshments, Goas 103 km coastline is blessed with the most enchanting beaches lapped by the Arabian Sea.',
+      imageUrl: 'https://travtalkindia.com/wp-content/uploads/2019/11/FINAL_TT_Dummy_November-1st18-3.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'PondiCherry',
+      description: 'A former French colony, it is known for age-old monuments, majestic churches, exotic beaches, and tree-lined boulevards. The French heritage makes Puducherry a preferred destination among tourists from all over the world.',
+      imageUrl: 'https://www.spinonholidays.com/wp-content/uploads/2022/01/pondicherry-1280x720.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Aurvalle Beach Of Pondicherry',
+      description: 'Auroville Beach. One of the best Pondicherry Beaches, Auroville Beach which is also known as Auro Beach is located near the famous Auroville. It is known for its shallow waters, as clear as a crystal, spread volcanic sands and beautiful seashells that you wont be able to resist yourself from collecting.',
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuUbHA7cItlroIwPZN5tdSqAaOx0zgn1KQRw&usqp=CAU',
+      
+    },
+    {
+      name: 'Beaches Of PondiCherry',
+      description: 'Pondicherry Beaches Promenade Beach, Serenity Beach, Mahe Beach, Auroville Beach, Paradise Beach, Reppo Beach, Veerampattinam Beach, Quiet Beach, Karaikal Beach. Pondicherry Beaches make for the most breathtaking feature of the coastal town of Pondicherry for all the tourists.',
+      imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z29hJTIwYmVhY2h8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60 ',
+      
+    },
+    {
+      name: 'Coorg',
+      description: 'Coorg, also known as Kodagu, is a beautiful hill station in the Indian state of Karnataka. It is famous for its coffee plantations, steep hills, countless streams, rich flora & fauna, lush forests and breathtaking views.',
+      imageUrl: 'https://www.educationworld.in/wp-content/uploads/2022/12/beautiful-strawberry-garden-sunrise-doi-ang-khang-chiang-mai-thailand-scaled.jpg',
+     
+    },
+    {
+      name: 'Coorg WaterFalls',
+      description: 'Abbey Falls, Iruppu Falls, Chelavara Falls, Burude falls, Mallalli Falls, Devarakolli Falls, Napandapole Falls and several others which are an excellent epitome of absolute serenity and tranquility. Waterfalls in Coorg provide you with an epitome of serene surroundings filled with tranquility.',
+      imageUrl: 'https://blog.thomascook.in/wp-content/uploads/2018/04/Featured-2-1.jpg',
+      
+    },
+    {
+      name: 'Coorg Hill Station',
+      description: 'Located along the western ghats, Coorg is one of the most popular hill towns in Karnataka that is famous for its unrivalled beauty, peerless landscape and aromatic coffee plantation. Also known as the Scotland of India, Coorg is among the best travel getaways that needs to be explored at least once in a lifetime.',
+      imageUrl: 'https://travellersjunction.com/wp-content/uploads/2021/01/Best-Time-To-Visit-Coorg.jpg',
+     
+    },
+    {
+      name: 'Chikmagalur',
+      description: 'Chikmagalur is situated in the Malenadu region of Karnataka in the Deccan plateau in the foothills of the Western Ghats. It is situated at an elevation of 1,090 metres (3,580 ft) above mean sea level, meaning, it is the third highest city in Karnataka.',
+      imageUrl: 'https://www.awaycabs.in/uploads/image/tour-packages/chikmagalur-tour-packages-1/chikmagalur-tour-packages-1.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Manali',
+      description: 'A gift of the Himalayas to the world, Manali is a beautiful township nestled in the picturesque Beas River valley. It is a rustic enclave known for its cool climate and snow-capped mountains, offering respite to tourists escaping scorching heat of the plains.',
+      imageUrl: 'https://5.imimg.com/data5/LR/XD/DQ/SELLER-41990570/shimla-kullu-manali-tour-package-500x500.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Leh and Ladakh',
+      description: 'Located in the Ladakh region of Jammu and Kashmir, Leh is known for its stunning scenic locales, Buddhist temples and pristine environment. Due to the strong influence of Tibetan Buddhism, Leh is also known as Little Tibet or the Land of Lamas.',
+      imageUrl: 'https://www.holidify.com/images/cmsuploads/compressed/2245989501ddbfd32f73b_20200521174329.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Udaipur',
+      description: 'THE CITY OF LAKES AND PALACES Often referred to as the Venice of the East, the city of lakes Udaipur is located around azure water lakes and is hemmed in by lush green hills of Aravallis. The famous Lake Palace, located in the middle of Lake Pichola is one of the most beautiful sights of Udaipur.',
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/6f/Evening_view%2C_City_Palace%2C_Udaipur.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Rajasthan',
+      description: ' such as Udaipur and Mandawa also offer delightful, albeit short camel rides. In Udaipur, for instance, the ride starts from the magnificent Fateh Sagar Lake until the bustling markets.',
+      imageUrl: 'https://www.tourmyindia.com/states/rajasthan/image/camel-safari-tour1.webp',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'The City Palace Of Udaipur',
+      description: 'Sheess Mahal or Palace of Mirrors and glasses was built in 1716 by Maharana Pratap for his wife Maharani Ajabde. In 1974, a part of the city palace and the Zenana Mahal (Ladies Chamber) were converted into a museum. The museum is open for public.',
+      imageUrl: 'https://map.sahapedia.org/admin/assets/images/2021033013400727799_Banner.jpg?__imr__=bannerMuseum',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'TajHotel',
+      description: 'The Taj Mahal Palace is a heritage, five-star, luxury hotel in the Colaba area of Mumbai, Maharashtra, India, situated next to the Gateway of India. Built in the Indo-Saracenic style, it opened in 1903 as the Taj Mahal Hotel and has historically often been known simply as "The Taj". The hotel is named after the Taj Mahal, which is located in the city of Agra approximately 1,050 kilometres (650 mi) from Mumbai. It has been considered one of the finest hotels in the East since the time of the British Raj. ',
+      imageUrl: 'https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2018/12/15/Pictures/_9f2b6346-ffd3-11e8-9457-b1b429387a4e.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Gate Of India',
+      description: 'The Gateway was later used as a symbolic ceremonial entrance to India for Viceroys and the new Governors of Bombay. It served to allow entry and access to India. The Gateway of India is located on the waterfront at Apollo Bunder area at the end of Chhatrapati Shivaji Marg in South Mumbai and overlooks the Arabian Sea.',
+      imageUrl: 'https://mumbaitourism.travel/images/places-to-visit/headers/gateway-of-india-mumbai-indian-tourism-entry-fee-timings-holidays-reviews-header.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Chhatrapati Shivaji Maharaj Terminus of Mumbai',
+      description: 'Chhatrapati Shivaji Terminus (officially Chhatrapati Shivaji Maharaj Terminus since 2017, formerly Victoria Terminus, Bombay station code: CSMT (mainline)[4]/ST (suburban)), is a historic railway terminus and UNESCO World Heritage Site in Mumbai, Maharashtra, India.[5]',
+      imageUrl: 'https://images.news18.com/ibnlive/uploads/2022/01/chhatrapati-shivaji-maharaj-terminus-csmt-in-mumbai-illuminated-in-tricolour-164316629816x9.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Elephanta Caves Of Mumbai',
+      description: 'The Elephanta Caves contain rock-cut stone sculptures, mostly in high relief, that show syncretism of Hindu and Buddhist ideas and iconography. The caves are hewn from solid basalt rock. Except for a few exceptions, much of the artwork is defaced and damaged.',
+      imageUrl: 'https://www.tusktravel.com/blog/wp-content/uploads/2021/12/Elephanta-Caves-Maharashtra.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Temples Of Rameshwaram (Tamilnadu)',
+      description: 'Rameshwaram Temple is renowned for being a part of one of the twelve Jyotirlingas (lingam of light) of Lord Shiva in India. The temple is also famous for the fact that its the southernmost jyotirlinga of India which makes it one of the top religious places in India. This holy place is said to have been the site where Lord Rama offered his gratitude to Lord Shiva, which makes it the preferred location for pilgrims in India as well as all of Southeast Asia.',
+      imageUrl: 'https://www.spinonholidays.com/wp-content/uploads/2022/03/Rameswaram_Places_To_Visit.webp',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Dhanushkodi Beach Point. Ariyaman Beach. Kunthu kal Beach, Rameswaram. ',
+      description: 'Many tourists still visit Dhanushkodi Beach. The main attractions of the beach are Ram Sethu view point, also known as Adams Bridge, which is said to be constructed by the army of Vanaras (monkeys) for Lord Rama according to Hindu Legend.',
+      imageUrl: 'data:image/jpeg;base64,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',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Hyderabad',
+      description: 'Medak district has several tourist attractions like Medak Fort, Medak Cathedral (largest church in Asia), Wargal Saraswathi Temple, Singur Dam, Edupayala Temple, Nelakondapalli, etc. Most of the places can be covered in 1-2 days and hence Medak acts a perfect weekend getaway from Hyderabad.',
+      imageUrl: 'https://www.bestbus.in/assets/images/news-cms/hyderabad_tourist_places_map.jpeg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Buddhavanam',
+      description: 'Telangana will now be mapped prominently on the national and international Buddhist tourism circuit as the stage is set for the grand inauguration of Buddhavanam project at Nagarjunasagar on Saturday. Industries Minister KT Rama Rao will formally launch the Buddhavanam – Buddhist Heritage Theme Park. It is developed by Telangana Tourism Development Corporation (TSTDC). […]',
+      imageUrl: 'https://cdn.telanganatoday.com/wp-content/uploads/2022/05/Buddhavanam-to-place-Telangana-among-Buddhist-tourist-places.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Grand Canyon Of India',
+      description: 'Gandikota is a village and historical fort on the right bank of the Penna river, 15 km from Jammalamadugu in Kadapa district, Andhra Pradesh, India. The fort was the centre of power for various dynasties, such as the Kalyani Chalukyas, Pemmasani Nayakas, and the Golconda Sultanate. A sand fort was constructed by Kaka Raja, Vassals of Kalyani Chalukya rulers. Various additions of Islamic architecture were made during subsequent Muslim rule.',
+      imageUrl: 'data:image/jpeg;base64,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',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'GandiKota',
+      description: 'Gandikota was founded in 1123 by Kapa Raja of Bommanapalle village. The town played a significant role during the Kakatiya, Vijayanagara and Qutub Shahi periods. The fort was made more impregnable by Pemmasani Thimma Nayudu. The fort was under the control of Pemmasani Nayaks for over 300 years.',
+      imageUrl: 'https://touritvirtually.com/wp-content/uploads/2015/11/text%20pics/tiv_gandikota_text%20pics/Gandikota_2.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    
+    
+  ];
+
+  selectedImageIndex: number = -1;
+
+  showCorrespondingImages(index: number): void {
+    this.selectedImageIndex = index;
+  }
+
+  hideCorrespondingImages(): void {
+    this.selectedImageIndex = -1;
+  }
+
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+gallery CSS
+-----------------------------------------------------------------------------------------------------------------------------------
+.scroll-container {
+  width: 1600px;
+  height: 710px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+.scroll-content {
+  animation: scrollDown 20s linear infinite; 
+  position: absolute; 
+  width: 100%;
+  height: auto;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f5f5f5; /* Add a background color to the container */
+  padding: 10px; /* Add some padding to create a margin between images */
+  justify-content: center;
+}
+
+.image-slide {
+  position: relative;
+  flex: 0 0 400px;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff; /* Add a background color to the individual slide */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for a card-like effect */
+}
+
+.animated-image {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px 10px 0 0; /* Round the top corners of the image slide */
+}
+
+.image-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  border-radius: 0 0 10px 10px; /* Round the bottom corners of the text container */
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.image-slide:hover .image-text {
+  transform: translateY(0);
+}
+
+/* Style the text elements */
+.image-text h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.image-text p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+}
+
+.corresponding-images {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  transition: transform 0.3s ease;
+  transform: translateY(100%);
+  justify-content: center;
+}
+
+.image-slide:hover .corresponding-images {
+  display: flex;
+  transform: translateY(0);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.corresponding-images img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 5px;
+  justify-content: center;
+}
+
+.selected-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.selected-image-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.selected-image-wrapper img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.selected-image-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+.selected-corresponding-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.selected-corresponding-images img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 5px;
+  cursor: pointer;
+}

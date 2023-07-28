@@ -1,0 +1,276 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-gallery',
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.css']
+})
+export class GalleryComponent {
+  holidayDestinations = [
+   
+   
+    {
+      name: 'India Gate',
+      description: 'Delhi Gate is one of the biggest war memorials in the world. Being the National Monument of India, the India Gate is also one of the biggest war memorials in the world. The design of India Gate is similar to that of Arc De Triomphe in Paris.2',
+      imageUrl: 'https://indiacsr.in/wp-content/uploads/2022/07/India-Gate.jpg',
+      correspondingImages: []
+    },
+    {
+      name: 'TajMahal',
+      description: 'Taj Mahal means "Crown Palace" and is in fact the most well preserved and architecturally beautiful tomb in the world. The English poet, Sir Edwin Arnold has described The Taj as "Not a piece of architecture, as other buildings are, but the proud passions of an emperors love wrought in living stones."',
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Taj-Mahal.jpg/1024px-Taj-Mahal.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Kerala',
+      description: 'Look deep into nature, and then you will understand everything better',
+      imageUrl: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Munnar',
+      description: ' Kerala allure with her sun and sand, blue backwater inlets, splendid historical monuments, spice plantations, tea and coffee gardens, lush green forests and much more. Kerala Tourism It is a perfect gateway for nature lovers, adventure seekers, honeymooners, families and backpackers. Kerala allure with her sun and sand, blue backwater inlets, splendid historical monuments, spice plantations, tea and coffee gardens, lush green forests and much more.',
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Munnar_hillstation_kerala.jpg/1200px-Munnar_hillstation_kerala.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Gokarna',
+      description: 'It is now a favourite with most of the foreign tourists travelling to India for some Sun, sand and sea. We will see today how much warmth and fun we can get from this very holy, beautiful and exotic place. 1. The most beautiful beach in Gokarna is the Om beach, without a shadow of doubt.18-Sept-2019',
+      imageUrl: 'https://www.travlics.com/blog/wp-content/uploads/2019/08/Location-of-Gokarna-1024x599.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Beaches Of Gokarna',
+      description: 'Gokarna Main Beach is mainly used by Indian pilgrims. Main Beach is a long open beach, known for surfing. Kudle and Om are around 6 km from Gokarna town along a muddy hill; they are accessible by rickshaw or foot. Half moon and Paradise are beyond Om beach and are accessible only by trekking or boat.',
+      imageUrl: 'https://www.oyorooms.com/travel-guide/wp-content/uploads/2021/05/Gokarna-3-1-1280x720.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Goa',
+      description: 'Sun, sand and sea being the major attractions, Goa trip is a perfect heaven for the ones who need and want relaxation. Goa Beach Resorts always add to the fun. Christian Pilgrimage tours to Goa are extremely popular.',
+      imageUrl: 'https://ihplb.b-cdn.net/wp-content/uploads/2016/11/Goa.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Crescent Beaches Of Goa',
+      description: 'Crescent Beaches Shaped like the new moon, Goas beaches are known the world over. Fringed by swaying palm and coconut trees with cool and comfortable shacks offering a variety of refreshments, Goas 103 km coastline is blessed with the most enchanting beaches lapped by the Arabian Sea.',
+      imageUrl: 'https://travtalkindia.com/wp-content/uploads/2019/11/FINAL_TT_Dummy_November-1st18-3.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'PondiCherry',
+      description: 'A former French colony, it is known for age-old monuments, majestic churches, exotic beaches, and tree-lined boulevards. The French heritage makes Puducherry a preferred destination among tourists from all over the world.',
+      imageUrl: 'https://www.spinonholidays.com/wp-content/uploads/2022/01/pondicherry-1280x720.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Aurvalle Beach Of Pondicherry',
+      description: 'Auroville Beach. One of the best Pondicherry Beaches, Auroville Beach which is also known as Auro Beach is located near the famous Auroville. It is known for its shallow waters, as clear as a crystal, spread volcanic sands and beautiful seashells that you wont be able to resist yourself from collecting.',
+      imageUrl: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D&w=1000&q=80',
+    },
+    {
+      name: 'Beach view Of PondiCherry',
+      description: 'Pondicherry Beaches Promenade Beach, Serenity Beach, Mahe Beach, Auroville Beach, Paradise Beach, Reppo Beach, Veerampattinam Beach, Quiet Beach, Karaikal Beach. Pondicherry Beaches make for the most breathtaking feature of the coastal town of Pondicherry for all the tourists.',
+      imageUrl: 'https://static-blog.treebo.com/wp-content/uploads/2021/02/Promenade-Beach.jpg',
+    },
+    {
+      name: 'Coorg',
+      description: 'Coorg, also known as Kodagu, is a beautiful hill station in the Indian state of Karnataka. It is famous for its coffee plantations, steep hills, countless streams, rich flora & fauna, lush forests and breathtaking views.',
+      imageUrl: 'https://www.educationworld.in/wp-content/uploads/2022/12/beautiful-strawberry-garden-sunrise-doi-ang-khang-chiang-mai-thailand-scaled.jpg',
+     
+    },
+    {
+      name: 'Coorg WaterFalls',
+      description: 'Abbey Falls, Iruppu Falls, Chelavara Falls, Burude falls, Mallalli Falls, Devarakolli Falls, Napandapole Falls and several others which are an excellent epitome of absolute serenity and tranquility. Waterfalls in Coorg provide you with an epitome of serene surroundings filled with tranquility.',
+      imageUrl: 'https://blog.thomascook.in/wp-content/uploads/2018/04/Featured-2-1.jpg',
+      
+    },
+    {
+      name: 'Coorg Hill Station',
+      description: 'Located along the western ghats, Coorg is one of the most popular hill towns in Karnataka that is famous for its unrivalled beauty, peerless landscape and aromatic coffee plantation. Also known as the Scotland of India, Coorg is among the best travel getaways that needs to be explored at least once in a lifetime.',
+      imageUrl: 'https://seoimgak.mmtcdn.com/blog/sites/default/files/coorg-travel-guide-view.jpg',
+     
+    },
+    {
+      name: 'Chikmagalur',
+      description: 'Chikmagalur is situated in the Malenadu region of Karnataka in the Deccan plateau in the foothills of the Western Ghats. It is situated at an elevation of 1,090 metres (3,580 ft) above mean sea level, meaning, it is the third highest city in Karnataka.',
+      imageUrl: 'https://www.awaycabs.in/uploads/image/tour-packages/chikmagalur-tour-packages-1/chikmagalur-tour-packages-1.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Manali',
+      description: 'A gift of the Himalayas to the world, Manali is a beautiful township nestled in the picturesque Beas River valley. It is a rustic enclave known for its cool climate and snow-capped mountains, offering respite to tourists escaping scorching heat of the plains.',
+      imageUrl: 'https://www.clubmahindra.com/blog/media/section_images/shuttersto-ba43fa25a3cb35f.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Leh and Ladakh',
+      description: 'Located in the Ladakh region of Jammu and Kashmir, Leh is known for its stunning scenic locales, Buddhist temples and pristine environment. Due to the strong influence of Tibetan Buddhism, Leh is also known as Little Tibet or the Land of Lamas.',
+      imageUrl: 'https://www.holidify.com/images/cmsuploads/compressed/2245989501ddbfd32f73b_20200521174329.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Udaipur',
+      description: 'THE CITY OF LAKES AND PALACES Often referred to as the Venice of the East, the city of lakes Udaipur is located around azure water lakes and is hemmed in by lush green hills of Aravallis. The famous Lake Palace, located in the middle of Lake Pichola is one of the most beautiful sights of Udaipur.',
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/6f/Evening_view%2C_City_Palace%2C_Udaipur.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Rajasthan',
+      description: ' such as Udaipur and Mandawa also offer delightful, albeit short camel rides. In Udaipur, for instance, the ride starts from the magnificent Fateh Sagar Lake until the bustling markets.',
+      imageUrl: 'https://www.tourmyindia.com/states/rajasthan/image/camel-safari-tour1.webp',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'The City Palace Of Udaipur',
+      description: 'Sheess Mahal or Palace of Mirrors and glasses was built in 1716 by Maharana Pratap for his wife Maharani Ajabde. In 1974, a part of the city palace and the Zenana Mahal (Ladies Chamber) were converted into a museum. The museum is open for public.',
+      imageUrl: 'https://map.sahapedia.org/admin/assets/images/2021033013400727799_Banner.jpg?__imr__=bannerMuseum',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'TajHotel',
+      description: 'The Taj Mahal Palace is a heritage, five-star, luxury hotel in the Colaba area of Mumbai, Maharashtra, India, situated next to the Gateway of India. Built in the Indo-Saracenic style, it opened in 1903 as the Taj Mahal Hotel and has historically often been known simply as "The Taj". The hotel is named after the Taj Mahal, which is located in the city of Agra approximately 1,050 kilometres (650 mi) from Mumbai. It has been considered one of the finest hotels in the East since the time of the British Raj. ',
+      imageUrl: 'https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2018/12/15/Pictures/_9f2b6346-ffd3-11e8-9457-b1b429387a4e.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'The Gateway of India',
+      description: 'The Gateway was later used as a symbolic ceremonial entrance to India for Viceroys and the new Governors of Bombay. It served to allow entry and access to India. The Gateway of India is located on the waterfront at Apollo Bunder area at the end of Chhatrapati Shivaji Marg in South Mumbai and overlooks the Arabian Sea.',
+      imageUrl: 'https://mumbaitourism.travel/images/places-to-visit/headers/gateway-of-india-mumbai-indian-tourism-entry-fee-timings-holidays-reviews-header.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Chhatrapati Shivaji Maharaj Terminus of Mumbai',
+      description: 'Chhatrapati Shivaji Terminus (officially Chhatrapati Shivaji Maharaj Terminus since 2017, formerly Victoria Terminus, Bombay station code: CSMT (mainline)[4]/ST (suburban)), is a historic railway terminus and UNESCO World Heritage Site in Mumbai, Maharashtra, India.[5]',
+      imageUrl: 'https://images.news18.com/ibnlive/uploads/2022/01/chhatrapati-shivaji-maharaj-terminus-csmt-in-mumbai-illuminated-in-tricolour-164316629816x9.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Elephanta Caves Of Mumbai',
+      description: 'The Elephanta Caves contain rock-cut stone sculptures, mostly in high relief, that show syncretism of Hindu and Buddhist ideas and iconography. The caves are hewn from solid basalt rock. Except for a few exceptions, much of the artwork is defaced and damaged.',
+      imageUrl: 'https://www.tusktravel.com/blog/wp-content/uploads/2021/12/Elephanta-Caves-Maharashtra.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Temples Of Rameshwaram (Tamilnadu)',
+      description: 'Rameshwaram Temple is renowned for being a part of one of the twelve Jyotirlingas (lingam of light) of Lord Shiva in India. The temple is also famous for the fact that its the southernmost jyotirlinga of India which makes it one of the top religious places in India. ',
+      imageUrl: 'https://myoksha.com/wp-content/uploads/2019/07/Architecture-of-Rameswaram-Ramanathaswamy-Temple.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Dhanushkodi Beach Point. Ariyaman Beach. Kunthu kal Beach, Rameswaram. ',
+      description: 'Many tourists still visit Dhanushkodi Beach. The main attractions of the beach are Ram Sethu view point, also known as Adams Bridge, which is said to be constructed by the army of Vanaras (monkeys) for Lord Rama according to Hindu Legend.',
+      imageUrl: 'https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/rameswaram-1655198124_3263febcdc7b8bfffd8c.webp',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Hyderabad',
+      description: 'Medak district has several tourist attractions like Medak Fort, Medak Cathedral (largest church in Asia), Wargal Saraswathi Temple, Singur Dam, Edupayala Temple, Nelakondapalli, etc. Most of the places can be covered in 1-2 days and hence Medak acts a perfect weekend getaway from Hyderabad.',
+      imageUrl: 'https://www.bestbus.in/assets/images/news-cms/hyderabad_tourist_places_map.jpeg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Buddhavanam',
+      description: 'Telangana will now be mapped prominently on the national and international Buddhist tourism circuit as the stage is set for the grand inauguration of Buddhavanam project at Nagarjunasagar on Saturday. Industries Minister KT Rama Rao will formally launch the Buddhavanam – Buddhist Heritage Theme Park. It is developed by Telangana Tourism Development Corporation (TSTDC). […]',
+      imageUrl: 'https://cdn.telanganatoday.com/wp-content/uploads/2022/05/Buddhavanam-to-place-Telangana-among-Buddhist-tourist-places.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'Grand Canyon Of India',
+      description: 'Gandikota is a village and historical fort on the right bank of the Penna river, 15 km from Jammalamadugu in Kadapa district, Andhra Pradesh, India. The fort was the centre of power for various dynasties, such as the Kalyani Chalukyas, Pemmasani Nayakas, and the Golconda Sultanate. ',
+      imageUrl: 'https://adventuresome.in/wp-content/uploads/2020/03/Grand-canyon-of-India-gandikota-min-1280x720.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    {
+      name: 'GandiKota',
+      description: 'Gandikota was founded in 1123 by Kapa Raja of Bommanapalle village. The town played a significant role during the Kakatiya, Vijayanagara and Qutub Shahi periods. The fort was made more impregnable by Pemmasani Thimma Nayudu. The fort was under the control of Pemmasani Nayaks for over 300 years.',
+      imageUrl: 'https://touritvirtually.com/wp-content/uploads/2015/11/text%20pics/tiv_gandikota_text%20pics/Gandikota_2.jpg',
+      correspondingImages: [
+        
+        
+      ]
+    },
+    
+    
+  ];
+
+  selectedImageIndex: number = -1;
+
+  showCorrespondingImages(index: number): void {
+    this.selectedImageIndex = index;
+  }
+
+  hideCorrespondingImages(): void {
+    this.selectedImageIndex = -1;
+  }
+
+}
